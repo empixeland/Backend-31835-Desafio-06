@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio Websockets</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <h1>
+          La tiendita Chat
+        </h1>
+      </li>
+    </ul>
+    <div>
+      <div style="margin-top: 120px">
+        <form onSubmit=" return anotherName()">
+          <div>
+            <label for="inputName" >Nombre</label>
+            <div >
+              <input
+                type="text"
+                id="inputName"
+                name="Titulo"
+                placeholder="Nombre del producto"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="inputPrice">Precio</label>
+            <div>
+              <input
+                type="number"
+                id="inputPrice"
+                name="precio"
+                placeholder="Precio del producto"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="inputThumb">Foto del Producto</label
+            >
+            <div>
+              <input
+                type="text"
+                id="inputThumb"
+                name="thumbnail"
+                placeholder="URL del producto"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <button type="submit">Añadir</button>
+            </div>
+          </div>
+        </form>
+        <hr />
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Thumbnail</th>
+              </tr>
+            </thead>
+            <tbody id="tabla"></tbody>
+          </table>
+        </div>
+      </div>
+      <hr />
+      <form onSubmit="return addMsg()">
+        <input type="email" placeholder="Añade tu email" id="inpname" />
+        <input type="text" placeholder="Escribe tu mensaje" id="inpmsg" />
+        <input type="submit" value="Enviar"/>
+      </form>
+
+      <div id="chat"></div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
